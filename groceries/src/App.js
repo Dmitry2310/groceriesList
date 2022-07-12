@@ -8,7 +8,12 @@ import { Search } from './Components/Search';
 
 function App() {
 
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem('ShoppingList')));
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('ShoppingList')) ||
+    [{
+      id: 1,
+      checked: false,
+      body: 'bread'
+    }]);
   const [newItem, setNewItem] = useState('');
   const [search, setSearch] = useState('');
 
